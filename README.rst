@@ -5,9 +5,6 @@ mezzanine_bootswatch
 .. image:: https://badge.fury.io/py/mezzanine_bootswatch.png
     :target: https://badge.fury.io/py/mezzanine_bootswatch
 
-.. image:: https://travis-ci.org/beetleman/mezzanine_bootswatch.png?branch=master
-    :target: https://travis-ci.org/beetleman/mezzanine_bootswatch
-
 Bootswatch integration
 
 Documentation
