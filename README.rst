@@ -30,7 +30,7 @@ Features
 --------
 
 * TODO
-  ** tests
+  + tests
 
 Running Tests
 --------------
