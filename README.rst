@@ -26,12 +26,6 @@ Then use it in a project::
 
     import mezzanine_bootswatch
 
-Features
---------
-
-* TODO
-- [ ] tests
-
 Running Tests
 --------------
 
@@ -43,8 +37,13 @@ Does the code actually work?
     (myenv) $ pip install -r requirements-test.txt
     (myenv) $ python runtests.py
 
+TODO
+----
+
+* tests
+
 Credits
----------
+-------
 
 Tools used in rendering this package:
 
