@@ -17,11 +17,26 @@ Quickstart
 
 Install mezzanine_bootswatch::
 
-    pip install mezzanine_bootswatch
+    pip install git+git://github.com/beetleman/mezzanine_bootswatch.git
 
-Then use it in a project::
+Then use it in a project by add to settings.py::
 
-    import mezzanine_bootswatch
+    INSTALLED_APPS = (
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.redirects",
+        "django.contrib.sessions",
+        "django.contrib.sites",
+        "django.contrib.sitemaps",
+        "django.contrib.staticfiles",
+        "mezzanine_bootswatch",
+        "mezzanine.boot",
+        "mezzanine.conf",
+        "mezzanine.core",
+    ...
+    )
+
 
 Running Tests
 --------------
