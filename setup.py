@@ -53,6 +53,8 @@ setup(
     ],
     include_package_data=True,
     install_requires=[
+        "Mezzanine<=4.1.0",
+        "Django<=1.8.0"
     ],
     license="BSD",
     zip_safe=False,
