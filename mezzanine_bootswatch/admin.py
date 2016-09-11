@@ -8,4 +8,9 @@ class BootswatchThemeAdmin(admin.ModelAdmin):
     form = BootswatchThemeForm
     list_display = ('name', 'site')
 
+    class Media:
+        css = {
+            'all': ('mezzanine_bootswatch/css/admin.css',)
+        }
+
 admin.site.register(BootswatchTheme, BootswatchThemeAdmin)

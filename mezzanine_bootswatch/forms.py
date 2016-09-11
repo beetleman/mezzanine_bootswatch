@@ -5,6 +5,8 @@ import requests
 
 from django.core.cache import cache
 from django import forms
+from django.utils.safestring import mark_safe
+
 
 from mezzanine_bootswatch.models import BootswatchTheme
 from mezzanine_bootswatch import logger
@@ -12,13 +14,27 @@ from mezzanine_bootswatch import logger
 
 BOOTSWATCH_API = "https://bootswatch.com/api/3.json"
 
+CHOICE_TEMPLATE = """
+<img src="{thumbnail}" alt={name}>
+"""
+
+
+class BootswatchThemeRadioFieldRenderer(
+        forms.widgets.RadioFieldRenderer):
+    pass
+
+
+class BootswatchThemeRadioSelect(forms.RadioSelect):
+    renderer = BootswatchThemeRadioFieldRenderer
+
 
 class BootswatchThemeForm(forms.ModelForm):
 
     def __init__(self, *args, **kwsrgs):
         super(BootswatchThemeForm, self).__init__(*args, **kwsrgs)
         self.fields['url'] = forms.ChoiceField(
-            choices=self.get_themes_choices()
+            choices=self.get_themes_choices(),
+            widget=BootswatchThemeRadioSelect
         )
 
     def get_themes(self):
@@ -47,8 +63,12 @@ class BootswatchThemeForm(forms.ModelForm):
         obj.save()
         return obj
 
+    def get_theme_choice(self, theme):
+        print(theme)
+        return mark_safe(CHOICE_TEMPLATE.format(**theme))
+
     def get_themes_choices(self):
-        return [[theme['cssCdn'], theme['name']]
+        return [[theme['cssCdn'], self.get_theme_choice(theme)]
                 for theme in self.get_themes()]
 
     class Meta:

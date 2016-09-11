@@ -1,0 +1,46 @@
+.form-row.field-url li {
+  display: inline-block;
+  width: 100%;
+}
+
+@media (min-width: 1000px) {
+  .form-row.field-url li {
+    width: 49%;
+  }
+}
+@media (min-width: 1500px) {
+  .form-row.field-url li {
+    width: 33%;
+  }
+}
+
+
+.form-row.field-url label {
+  float: none;
+  position: relative;
+}
+
+.form-row.field-url ul label {
+  width: 100%;
+  padding: 0px;
+  border: 1px solid #d4d4d4;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.form-row.field-url input {
+  float: none;
+  margin: 0px 20px;
+  top: 50%;
+  position: absolute;
+}
+
+.form-row.field-url img {
+  float: none;
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+}
